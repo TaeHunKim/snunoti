@@ -41,7 +41,12 @@
         <tr>
           <td class = center ><%= a["category"] %></td>
           <td class = center ><%= a["category"] %>-<%= a["node"] %></td>
-          <td class = link><%= link_to a["title"], a["link"], :target => "_blank" %></td>
+          <td class = link>
+            <%= link_to a["title"], a["link"], :target => "_blank", :title => a["content"] %>
+            <% if (Date.today()-Date.parse(a["date"])).floor <= 3 then %>
+              <%= image_tag('icon_new.gif', size: "21x9", alt:"new",align:"absmiddle") %>
+            <% end %>
+          </td>
           <td class = center ><%= a["date"] %></td>
         </tr>
       <% end %>

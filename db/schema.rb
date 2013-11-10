@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013081202) do
+ActiveRecord::Schema.define(version: 20131018145901) do
 
   create_table "computers", force: true do |t|
     t.integer  "node"
@@ -20,6 +20,26 @@ ActiveRecord::Schema.define(version: 20131013081202) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "content"
+  end
+
+  create_table "domitories", force: true do |t|
+    t.integer "node"
+    t.integer "primary_key"
+    t.string  "title"
+    t.date    "date"
+    t.string  "link"
+    t.string  "content"
+  end
+
+  create_table "engineers", force: true do |t|
+    t.integer  "node"
+    t.string   "title"
+    t.date     "date"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "content"
   end
 
   create_table "mysnus", force: true do |t|
@@ -29,6 +49,7 @@ ActiveRecord::Schema.define(version: 20131013081202) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "content"
   end
 
 end
