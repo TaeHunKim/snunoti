@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <style>
+      table
+      {
+        BORDER-COLLAPSE: collapse;
+      }
+      table,td,th
+      {
+        border:1px solid white;
+        padding : 3px;
+      }
+      th
+      {
+        background-color : #CCCCFF;
+      }
+      td
+      {
+        background-color : #EAFFFF;
+      }
+      .center
+      {
+        text-align : center;
+      }
+      a
+      {
+        text-decoration:none !important;
+        color : black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>카테고리</th>
+        <th>번호</th>
+        <th>제목</th>
+        <th>게시일</th>
+      </tr>
+      <% @tables.each do |a| %>
+        <tr>
+          <td class = center ><%= a["category"] %></td>
+          <td class = center ><%= a["category"] %>-<%= a["node"] %></td>
+          <td class = link><%= link_to a["title"], a["link"], :target => "_blank" %></td>
+          <td class = center ><%= a["date"] %></td>
+        </tr>
+      <% end %>
+    </table>
+  </body>
+</html>
